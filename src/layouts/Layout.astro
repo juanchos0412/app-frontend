@@ -17,7 +17,28 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
+		<header class="nav">
+			<a href="/">Home</a>
+			<a href="/contacto">Contactarnos</a>
+			<a href="/admin">Admin</a>
+			<a href="/cuenta">👤</a>
+		</header>
+
+
 		<slot />
+
+		<footer>
+			<p> &copy 2024 Poli - Plataforma de Registro</p>
+			<h3>Vistas de autenticación (esta sección será eliminada en la proxima entrega)</h3>
+			<div class="enlaces">
+				<a href="/auth/login">Log In</a>
+				<a href="/auth/singup">Sing Up</a>
+				<a href="/auth/reset-pass">Reset Password</a>
+				<a href="/auth/update-pass">Update Password</a>
+				<a href="/auth/denied">Acceso Denegado</a>
+				<a href="/auth/protected">Vista Protegida</a>
+			</div>
+		</footer>
 	</body>
 </html>
 <style is:global>
@@ -32,19 +53,66 @@ const { title } = Astro.props;
 			white 60%
 		);
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+	body {
+            font-family: Arial, sans-serif;
+            background-color: #40E0D0;
+            color: white;
+            margin: 0;
+            padding: 0;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+    }
+
+	.nav {
+            display: flex;
+			justify-content: flex-end;
+			background-color: #ddd;
+			padding: 1em;
+    }
+	.nav a {
+		color: blue;
+		text-decoration: none;
+		margin-left: 10px;
+		display: inline;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	.nav a:hover{
+		text-decoration: underline;
+	}
+
+	input{
+		color: #333;
+	}
+
+	footer{
+		background-color: #333;
+		color: white;
+		padding: 1em;
+		text-align: center;
+		margin: auto auto 0 auto;
+	}
+
+	footer p{
+		margin-bottom: 20px;
+	}
+
+	footer h3{
+		font-weight: bold;
+	}
+
+	footer .enlaces{
+		display: flex;
+		justify-content: center;
+		margin-top: 1em;
+		flex-wrap: wrap;
+		gap: 1em;
+	}
+	footer a{
+		color: yellow;
+		text-decoration: none;
+	}
+	footer a:hover{
+		text-decoration: underline;
 	}
 </style>
