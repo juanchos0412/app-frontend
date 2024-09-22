@@ -1,0 +1,162 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout title="Admin">
+    <div class="list-container">
+        <ul class="user-list">
+            <li class="user-item">
+                <span class="user-name">Grace Chen</span>
+                <div class="container-buttons-list">
+                <a href="#" class="user-link edit-link" data-user="Grace Chen">
+                    Grace Chen ⚙️
+                </a>
+
+                <a href="#" class="delete">🗑️</a>
+                </div>
+            </li>
+            <li class="user-item">
+                <span class="user-name">Olivia Wang</span>
+                <div class="container-buttons-list">
+                <a href="#" class="user-link edit-link" data-user="Olivia Wang">
+                    Olivia Wang ⚙️
+                </a>
+
+                <a href="#" class="delete">🗑️</a>
+                </div>
+            </li>
+            <!-- Agrega más usuarios según sea necesario -->
+        </ul>
+
+        <!-- Formulario para editar usuario -->
+        <div id="edit-form-container" class="hidden">
+            <h3>Edit User</h3>
+            <form id="edit-form">
+                <label for="user-name">Name:</label>
+                <input type="text" id="user-name" name="user-name" value="" required>
+                
+                <div class="button-container">
+                    <button type="submit" class="save-button">Save</button>
+                    <button type="button" class="cancel-button">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="button-container">
+            <button class="next-button">Next</button>
+        </div>
+    </div>
+</Layout>
+
+<style>
+    .list-container {
+        background-color: #40E0D0;
+        padding: 20px;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 600px;
+    }
+    .user-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .user-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .user-name {
+        color: #333;
+    }
+    .user-link {
+        color: #0000EE;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    .container-buttons-list {
+        display: flex;
+        align-items: center;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .next-button {
+        background-color: white;
+        color: #333;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 20px auto auto auto;
+    }
+
+    .next-button:hover {
+        background-color: #333;
+        color: white;
+    }
+
+    .next-button:after {
+        content: ">";
+        margin-left: 5px;
+    }
+
+    /* Estilos para el formulario */
+    #edit-form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        max-width: 400px;
+        margin-top: 20px;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .save-button, .cancel-button {
+        background-color: white;
+        color: #333;
+        border: 1px solid #333;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-right: 10px;
+    }
+
+    .save-button:hover, .cancel-button:hover {
+        background-color: #333;
+        color: white;
+    }
+</style>
+
+<script>
+   // Selecciona todos los enlaces de editar
+    const editLinks = document.querySelectorAll('.edit-link');
+    const editFormContainer = document.getElementById('edit-form-container');
+    const userNameInput = document.getElementById('user-name') as HTMLInputElement; // Corregido aquí
+    const cancelButton = document.querySelector('.cancel-button');
+
+    editLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const userName = this.dataset.user;
+
+            // Mostrar el formulario y rellenar el campo de nombre
+            userNameInput.value = userName;  // Aquí se usa correctamente 'value'
+            editFormContainer.classList.remove('hidden');
+        });
+    });
+
+    // Manejar el botón de cancelar
+    cancelButton.addEventListener('click', function() {
+        editFormContainer.classList.add('hidden');
+    });
+
+</script>
