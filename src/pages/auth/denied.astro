@@ -1,20 +1,25 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro"; // Importa el componente Layout desde la ruta especificada
 ---
 
 <Layout title="Acceso denegado">
+    <!-- Usamos el componente Layout con el título "Acceso denegado" -->
     <div class="access-denied-container">
+        <!-- Contenedor principal para el mensaje de acceso denegado -->
         <div class="lock-icon">🔒</div>
+        <!-- Icono de candado que indica acceso restringido -->
         <h1>Acceso denegado</h1>
+        <!-- Encabezado principal que informa al usuario -->
         <p>
-            Para ver esta página es necesario ser miembro del sitio. Por favor 
-            <a href="/auth/singup">Sign up</a> o <a href="/auth/login">Log in</a>.
+            <!-- Párrafo que explica la razón del acceso denegado -->
+            Para ver esta página es necesario ser miembro del sitio. Por favor
+            <a href="/auth/singup">Sign up</a> o <a href="/auth/login">Log in</a
+            >. <!-- Enlaces para registrarse o iniciar sesión -->
         </p>
     </div>
 </Layout>
 
 <style>
-
     .access-denied-container {
         padding: 20px;
         border-radius: 5px;
@@ -42,7 +47,7 @@ import Layout from "../../layouts/Layout.astro";
         color: #333;
     }
     a {
-        color: #0000EE;
+        color: #0000ee;
         text-decoration: none;
     }
     a:hover {

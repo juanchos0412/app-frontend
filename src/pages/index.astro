@@ -1,68 +1,77 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
+import Layout from "../layouts/Layout.astro"; // Importa el componente Layout desde la ruta especificada
 ---
 
 <Layout title="Poli - Plataforma de Registro">
+    <!-- Usamos el componente Layout con el título "Poli - Plataforma de Registro" -->
 
     <div class="container">
+        <!-- Contenedor principal para el contenido de la página -->
         <div class="logo">Poli</div>
-        <h1>Plataforma web que permita el registro de usuarios, la asignación de roles (administrador y visualizador)</h1>
+        <!-- Elemento para mostrar el logo de la plataforma -->
+        <h1>
+            Plataforma web que permita el registro de usuarios, la asignación de
+            roles (administrador y visualizador)
+        </h1>
+        <!-- Descripción de la plataforma -->
         <h2>VERSION INICIAL</h2>
+        <!-- Subtítulo que indica la versión del sistema -->
         <form action="/auth/singup">
-            <input type="email" placeholder="TU DIRECCIÓN DE EMAIL" required>
+            <!-- Formulario que envía los datos a la ruta de registro -->
+            <input type="email" placeholder="TU DIRECCIÓN DE EMAIL" required />
+            <!-- Campo de entrada para el correo electrónico, obligatorio -->
             <button type="submit">REGISTRARME</button>
+            <!-- Botón para enviar el formulario y registrarse -->
         </form>
         <div class="login-link">
+            <!-- Contenedor para el enlace de inicio de sesión -->
             <a href="/auth/login">Log in</a>
+            <!-- Enlace que redirige a la página de inicio de sesión -->
         </div>
     </div>
 </Layout>
 
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+    }
+    .logo {
+        font-size: 48px;
+        font-weight: bold;
+        border: 2px solid white;
+        padding: 10px 20px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
 
-    <style>
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        .logo {
-            font-size: 48px;
-            font-weight: bold;
-            border: 2px solid white;
-            padding: 10px 20px;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-        
-        input[type="email"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: none;
-        }
-        button {
-            background-color: white;
-            color: #40E0D5;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            width: 100%;
-        }
-        .login-link {
-            margin-top: 20px;
-        }
-        .login-link a {
-            width: auto;
-            color: #3CA692;
-            text-decoration: none;
-            display: inline-block;
-            padding-top: 700px; 
-            padding: 9px; /* Espaciado interior */
-            background-color: #202B40; /* Color de fondo de la caja */
-            border-radius: 10px; /* Bordes redondeados */
-            
-            
-        }
-    </style>
+    input[type="email"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: none;
+    }
+    button {
+        background-color: white;
+        color: #40e0d5;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        width: 100%;
+    }
+    .login-link {
+        margin-top: 20px;
+    }
+    .login-link a {
+        width: auto;
+        color: #3ca692;
+        text-decoration: none;
+        display: inline-block;
+        padding-top: 700px;
+        padding: 9px; /* Espaciado interior */
+        background-color: #202b40; /* Color de fondo de la caja */
+        border-radius: 10px; /* Bordes redondeados */
+    }
+</style>

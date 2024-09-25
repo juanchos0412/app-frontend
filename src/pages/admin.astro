@@ -1,50 +1,47 @@
 ---
-import Layout from "../layouts/Layout.astro";
-
+import Layout from "../layouts/Layout.astro"; // Importa el componente Layout desde la ruta especificada
 ---
 
-<Layout title="Admin">
-    <div class="list-container">
-        <ul class="user-list">
-            <li class="user-item">
-                <span class="user-name">Grace Chen</span>
-                <div class="container-buttons-list">
-                <a href="#" class="user-link edit-link" data-user="Grace Chen">
-                    Grace Chen ⚙️
-                </a>
-
-                <a href="#" class="delete">🗑️</a>
+<Layout title="Admin"> <!-- Usamos el componente Layout con el título "Admin" -->
+    <div class="list-container"> <!-- Contenedor principal para la lista de usuarios -->
+        <ul class="user-list"> <!-- Lista desordenada que contiene los usuarios -->
+            <li class="user-item"> <!-- Elemento de la lista para un usuario -->
+                <span class="user-name">Grace Chen</span> <!-- Nombre del usuario -->
+                <div class="container-buttons-list"> <!-- Contenedor para los botones de acción -->
+                    <a href="#" class="user-link edit-link" data-user="Grace Chen"> <!-- Enlace para editar el usuario, incluye atributo data-user -->
+                        Grace Chen ⚙️
+                    </a>
+                    <a href="#" class="delete">🗑️</a> <!-- Enlace para eliminar al usuario -->
                 </div>
             </li>
-            <li class="user-item">
-                <span class="user-name">Olivia Wang</span>
-                <div class="container-buttons-list">
-                <a href="#" class="user-link edit-link" data-user="Olivia Wang">
-                    Olivia Wang ⚙️
-                </a>
-
-                <a href="#" class="delete">🗑️</a>
+            <li class="user-item"> <!-- Elemento de la lista para otro usuario -->
+                <span class="user-name">Olivia Wang</span> <!-- Nombre del usuario -->
+                <div class="container-buttons-list"> <!-- Contenedor para los botones de acción -->
+                    <a href="#" class="user-link edit-link" data-user="Olivia Wang"> <!-- Enlace para editar el usuario -->
+                        Olivia Wang ⚙️
+                    </a>
+                    <a href="#" class="delete">🗑️</a> <!-- Enlace para eliminar al usuario -->
                 </div>
             </li>
             <!-- Agrega más usuarios según sea necesario -->
         </ul>
 
         <!-- Formulario para editar usuario -->
-        <div id="edit-form-container" class="hidden">
-            <h3>Edit User</h3>
-            <form id="edit-form">
-                <label for="user-name">Name:</label>
-                <input type="text" id="user-name" name="user-name" value="" required>
+        <div id="edit-form-container" class="hidden"> <!-- Contenedor del formulario de edición, inicialmente oculto -->
+            <h3>Edit User</h3> <!-- Encabezado del formulario de edición -->
+            <form id="edit-form"> <!-- Formulario para editar los datos del usuario -->
+                <label for="user-name">Name:</label> <!-- Etiqueta para el campo de nombre -->
+                <input type="text" id="user-name" name="user-name" value="" required> <!-- Campo de entrada para el nombre, obligatorio -->
                 
-                <div class="button-container">
-                    <button type="submit" class="save-button">Save</button>
-                    <button type="button" class="cancel-button">Cancel</button>
+                <div class="button-container"> <!-- Contenedor para los botones de acción en el formulario -->
+                    <button type="submit" class="save-button">Save</button> <!-- Botón para guardar los cambios -->
+                    <button type="button" class="cancel-button">Cancel</button> <!-- Botón para cancelar la edición -->
                 </div>
             </form>
         </div>
 
-        <div class="button-container">
-            <button class="next-button">Next</button>
+        <div class="button-container"> <!-- Contenedor para el botón de paginación -->
+            <button class="next-button">Next</button> <!-- Botón para avanzar a la siguiente página de usuarios -->
         </div>
     </div>
 </Layout>
