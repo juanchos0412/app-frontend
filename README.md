@@ -101,4 +101,11 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 ## Contacto
 
-Para preguntas o sugerencias, puedes contactar al autor a través de su perfil en GitHub: [juanchos0412](https://github.com/juanchos0412).
+Para preguntas o sugerencias, puedes contactar al autor a través de su perfil en GitHub: 
+
+María Paula Casas Ramírez
+María Camila Burgos Cubillos 
+Nelson Andrés González Amórtegui 
+Juan Sebastian Valderrama Dueñas 
+Bairon Stiven Pedreros Ortiz COD 
+Alejandro Pérez Graciano COD 100265699 
