@@ -1,40 +1,64 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro"; // Importa el componente Layout desde la ruta especificada
 ---
 
 <Layout title="Sign up">
+    <!-- Usamos el componente Layout con el título "Sign up" -->
     <div class="signup-container">
+        <!-- Contenedor principal para la página de registro -->
         <h1>Sign up</h1>
+        <!-- Encabezado principal de la página de registro -->
         <form action="/auth/login">
+            <!-- Formulario que se envía a la ruta de inicio de sesión -->
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            
+            <!-- Etiqueta para el campo de correo electrónico -->
+            <input type="email" id="email" name="email" required />
+            <!-- Campo de entrada para el correo electrónico, obligatorio -->
+
             <label for="nombres">Nombres</label>
-            <input type="text" id="nombres" name="nombres" required>
-            
+            <!-- Etiqueta para el campo de nombres -->
+            <input type="text" id="nombres" name="nombres" required />
+            <!-- Campo de entrada para los nombres, obligatorio -->
+
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-            
+            <!-- Etiqueta para el campo de contraseña -->
+            <input type="password" id="password" name="password" required />
+            <!-- Campo de entrada para la contraseña, obligatorio -->
+
             <div class="checkbox-container">
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">Al crear una cuenta, acepto la política de privacidad y los términos de servicio de este sitio web.</label>
+                <!-- Contenedor para la primera casilla de verificación -->
+                <input type="checkbox" id="terms" name="terms" required />
+                <!-- Casilla de verificación para aceptar términos, obligatoria -->
+                <label for="terms"
+                    >Al crear una cuenta, acepto la política de privacidad y los
+                    términos de servicio de este sitio web.</label
+                >
+                <!-- Mensaje sobre los términos -->
             </div>
-            
+
             <div class="checkbox-container">
-                <input type="checkbox" id="marketing" name="marketing">
-                <label for="marketing">Doy mi consentimiento para recibir correos electrónicos de marketing.</label>
+                <!-- Contenedor para la segunda casilla de verificación -->
+                <input type="checkbox" id="marketing" name="marketing" />
+                <!-- Casilla de verificación para consentir correos de marketing -->
+                <label for="marketing"
+                    >Doy mi consentimiento para recibir correos electrónicos de
+                    marketing.</label
+                >
+                <!-- Mensaje sobre el consentimiento de marketing -->
             </div>
-            
+
             <button type="submit">Sign Up</button>
+            <!-- Botón para enviar el formulario y crear la cuenta -->
         </form>
-        <p class="login">¿Ya tienes una cuenta? <a href="/auth/login">Log In</a></p>
+        <p class="login">
+            ¿Ya tienes una cuenta? <a href="/auth/login">Log In</a>
+        </p>
+        <!-- Mensaje para redirigir a usuarios que ya tienen cuenta -->
     </div>
 </Layout>
 
 <style>
-
     .signup-container {
-        
         padding: 20px;
         border-radius: 5px;
         max-width: 400px;

@@ -1,16 +1,16 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro"; // Importa el componente Layout desde la ruta especificada
 ---
 
-<Layout title="Actualización del Password">
-    <div class="update-container">
-        <h1>Actualiza tú Password</h1>
-        <p>Ingrese su nueva contraseña en el campo que aparece a continuación. Asegúrese de no utilizar su contraseña actual.</p>
-        <form>
-            <label for="new-password">Nuevo Password</label>
-            <input type="password" id="new-password" name="new-password" required>
+<Layout title="Actualización del Password"> <!-- Usamos el componente Layout con el título "Actualización del Password" -->
+    <div class="update-container"> <!-- Contenedor principal para la página de actualización de contraseña -->
+        <h1>Actualiza tú Password</h1> <!-- Encabezado principal de la página -->
+        <p>Ingrese su nueva contraseña en el campo que aparece a continuación. Asegúrese de no utilizar su contraseña actual.</p> <!-- Instrucciones para el usuario -->
+        <form> <!-- Formulario para actualizar la contraseña -->
+            <label for="new-password">Nuevo Password</label> <!-- Etiqueta para el campo de nueva contraseña -->
+            <input type="password" id="new-password" name="new-password" required> <!-- Campo de entrada para la nueva contraseña, obligatorio -->
             
-            <button type="submit">Actualizar</button>
+            <button type="submit">Actualizar</button> <!-- Botón para enviar el formulario y actualizar la contraseña -->
         </form>
     </div>
 </Layout>
