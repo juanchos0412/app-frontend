@@ -15,21 +15,40 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+		/>
+		<link rel="stylesheet" href="./css/main.css" />
 	</head>
 	<body>
-		<header class="nav">
-			<a href="/">Home</a>
-			<a href="/contacto">Contactarnos</a>
-			<a href="/admin">Admin</a>
-			<a href="/cuenta">👤</a>
-		</header>
-
+		<header>
+			<button id="abrir" class="abrir-menu"
+				><i class="bi bi-list"></i></button
+			>
+			<nav class="nav" id="nav">
+				<button class="cerrar-menu" id="cerrar"
+					><i class="bi bi-x"></i></button
+				>
+				<ul class="nav-list">
+					<li><a href="/">Home</a></li>
+					<li><a href="/contacto">Contactarnos</a></li>
+					<li><a href="/admin">Admin</a></li>
+					<li><a href="/cuenta">👤</a></li>
+				</ul>
+			</nav>
+		</header>	
+		
+		<script src="/src/js/main.js" type="module"></script>
 
 		<slot />
 
 		<footer>
-			<p> &copy 2024 Poli - Plataforma de Registro</p>
-			<h3>Vistas de autenticación (esta sección será eliminada en la proxima entrega)</h3>
+			<p>&copy 2024 Poli - Plataforma de Registro</p>
+			<h3>
+				Vistas de autenticación (esta sección será eliminada en la
+				proxima entrega)
+			</h3>
 			<div class="enlaces">
 				<a href="/auth/login">Log In</a>
 				<a href="/auth/singup">Sing Up</a>
@@ -54,38 +73,105 @@ const { title } = Astro.props;
 		);
 	}
 	body {
-            font-family: Arial, sans-serif;
-            background-color: #40E0D0;
-            color: white;
-            margin: 0;
-            padding: 0;
-			min-height: 100vh;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-    }
+		font-family: Arial, sans-serif;
+		background-color: #40d1e2;
+		color: white;
+		margin: 0;
+		padding: 0;
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
 
-	.nav {
-            display: flex;
-			justify-content: flex-end;
-			background-color: #ddd;
-			padding: 1em;
-    }
-	.nav a {
+	.nav-list a {
 		color: blue;
 		text-decoration: none;
 		margin-left: 10px;
 		display: inline;
 	}
-	.nav a:hover{
+	.nav-list a:hover {
 		text-decoration: underline;
 	}
 
-	input{
+	header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		justify-content: flex-end;
+		padding: 2rem;
+		background-color: #40d1e2;
+	}
+	
+	.nav-list  {
+		list-style-type: none;
+		display: flex;
+		gap: 1rem;
+		padding: 1em;
+	}
+
+
+
+	.abrir-menu,
+	.cerrar-menu {
+		display: none;
+	}
+
+	@media screen and (max-width: 550px) {
+		.abrir-menu,
+		.cerrar-menu {
+			display: block;
+			border: 0;
+			font-size: 1.25rem;
+			background-color: transparent;
+			cursor: pointer;
+		}
+
+		.abrir-menu {
+			color: white;
+		}
+
+		.cerrar-menu {
+			color: blue;
+		}
+
+		.nav {
+			opacity: 0;
+			visibility: hidden;
+			display: flex;
+			flex-direction: column;
+			align-items: end;
+			gap: 1rem;
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #12b0c2;
+			padding: 2rem;
+			box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+			
+		}
+
+		.nav.visible {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		.nav-list {
+			flex-direction: column;
+			align-items: end;
+		}
+
+		.nav-list li a {
+			color: blue;
+		}
+	}
+
+	input {
 		color: #333;
 	}
 
-	footer{
+	footer {
 		background-color: #333;
 		color: white;
 		padding: 1em;
@@ -94,26 +180,26 @@ const { title } = Astro.props;
 		width: 100%;
 	}
 
-	footer p{
+	footer p {
 		margin-bottom: 20px;
 	}
 
-	footer h3{
+	footer h3 {
 		font-weight: bold;
 	}
 
-	footer .enlaces{
+	footer .enlaces {
 		display: flex;
 		justify-content: center;
 		margin-top: 1em;
 		flex-wrap: wrap;
 		gap: 1em;
 	}
-	footer a{
+	footer a {
 		color: yellow;
 		text-decoration: none;
 	}
-	footer a:hover{
+	footer a:hover {
 		text-decoration: underline;
 	}
 </style>
