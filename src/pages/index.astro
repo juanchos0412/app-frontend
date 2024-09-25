@@ -9,12 +9,12 @@ import Layout from "../layouts/Layout.astro";
         <div class="logo">Poli</div>
         <h1>Plataforma web que permita el registro de usuarios, la asignación de roles (administrador y visualizador)</h1>
         <h2>VERSION INICIAL</h2>
-        <form>
+        <form action="/auth/singup">
             <input type="email" placeholder="TU DIRECCIÓN DE EMAIL" required>
             <button type="submit">REGISTRARME</button>
         </form>
         <div class="login-link">
-            <a href="#">Log in</a>
+            <a href="/auth/login">Log in</a>
         </div>
     </div>
 </Layout>
@@ -44,7 +44,7 @@ import Layout from "../layouts/Layout.astro";
         }
         button {
             background-color: white;
-            color: #40E0D0;
+            color: #40E0D5;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
@@ -54,7 +54,15 @@ import Layout from "../layouts/Layout.astro";
             margin-top: 20px;
         }
         .login-link a {
-            color: #333;
+            width: auto;
+            color: #3CA692;
             text-decoration: none;
+            display: inline-block;
+            padding-top: 700px; 
+            padding: 9px; /* Espaciado interior */
+            background-color: #202B40; /* Color de fondo de la caja */
+            border-radius: 10px; /* Bordes redondeados */
+            
+            
         }
     </style>
